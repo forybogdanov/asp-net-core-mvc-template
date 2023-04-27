@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using GameWebsite.Services.Categories;
 using GameWebsite.Services.Posts;
-using GameWebsite.Services.Comments;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +15,6 @@ builder.Services.AddDbContext<GameWebsiteDbContext>(options =>
 
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IPostService, PostService>();
-builder.Services.AddTransient<ICommentService, CommentService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

@@ -1,6 +1,5 @@
 ﻿@using GameWebSite.Web.Models
 @using GameWebsite.Data.Models
-@using GameWebsite.Service.Models.Comments
 @using GameWebsite.Service.Models.Posts
 @{
     Layout = "_Layout";
@@ -39,21 +38,7 @@
         {
             <a class="btn btn-primary" asp-controller="Comment" asp-action="Create" asp-route-postId="12">Comment</a>
         }
-      <h2>Comments:</h2>
-    @foreach(CommentDto comment in Model.Comments)
-    {
-        <div class="card">
-            <p>@(comment.CreatedBy): @(comment.Content)</p>
-            <p>@(comment.CreatedAt)</p>
-            @if (roles.Contains("Admin"))
-            {
-                <a class="btn btn-primary" asp-area="Administration" asp-controller="CommentAdministration" asp-action="Delete" asp-route-id="@(comment.Id)">Delete</a>
-            }
-            @if (roles.Contains("User") && comment.CreatedBy.Id == user.Id)
-            {
-                <a class="btn btn-primary" asp-controller="Comment" asp-action="Delete" asp-route-id="@(comment.Id)">Delete</a>
-            }
-        </div>
+      <h2>Comments:</h2
     }
 </body>
 </html>

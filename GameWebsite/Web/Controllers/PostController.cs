@@ -1,14 +1,10 @@
-﻿using GameWebsite.Data.Models;
-using GameWebsite.Service.Models.Categories;
-using GameWebsite.Service.Models.Comments;
+﻿using GameWebsite.Service.Models.Categories;
 using GameWebsite.Service.Models.Posts;
 using GameWebsite.Service.Models.Users;
-using GameWebsite.Services.Comments;
 using GameWebsite.Services.Posts;
 using GameWebSite.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Security.Claims;
 
 namespace GameWebsite.Web.Controllers
@@ -16,12 +12,10 @@ namespace GameWebsite.Web.Controllers
     public class PostController : Controller
     {
         private readonly IPostService service;
-        private readonly ICommentService commentService;
 
-        public PostController(IPostService service, ICommentService commentService)
+        public PostController(IPostService service)
         {
             this.service = service;
-            this.commentService = commentService;
         }
         public IActionResult Index(long id)
         {
@@ -48,7 +42,6 @@ namespace GameWebsite.Web.Controllers
             {
                 Id = this.User.FindFirst(ClaimTypes.NameIdentifier).Value
             };
-            postDto.Comments = new List<CommentDto>();
             postDto.Category = new CategoryDto
             {
                 Id = categoryId,
@@ -97,8 +90,7 @@ namespace GameWebsite.Web.Controllers
         public async Task<IActionResult> Details(long id)
         {
             PostDto postDto = await this.service.GetPostById(id);
-            List<CommentDto> comments = this.commentService.GetAllComments().FindAll(comment => comment.Post.Id == id);
-            PostDetailsViewData postDetailsViewData = new PostDetailsViewData(postDto, comments);
+            PostDetailsViewData postDetailsViewData = new PostDetailsViewData(postDto);
 
             return View(postDetailsViewData);
 

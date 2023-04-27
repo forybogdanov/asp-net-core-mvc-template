@@ -35,7 +35,6 @@ namespace GameWebsite.Services.Posts
                 .Include(post => post.Category)
                 .Include(post => post.Category.CreatedBy)
                 .Include(post => post.CreatedBy)
-                .Include(post => post.Comments)
                 .SingleOrDefault(post => post.Id == id);
             if (post == null)
             {
@@ -66,7 +65,6 @@ namespace GameWebsite.Services.Posts
 
             List<PostDto> postDtos = posts.Select((post) =>
             {
-                post.Comments = new List<Comment>();
                 return post.ToDto();
             }).ToList();
             return postDtos;
@@ -79,7 +77,6 @@ namespace GameWebsite.Services.Posts
                 .Include(post => post.Category)
                 .Include(post => post.Category.CreatedBy)
                 .SingleOrDefault(post => post.Id == id);
-            post.Comments = new List<Comment>();
             if (post == null)
             {
                 // TODO: throw exception
@@ -93,7 +90,6 @@ namespace GameWebsite.Services.Posts
             Post post = this.gameWebsiteDbContext.Posts
                 .Include(post => post.Category)
                 .Include(post => post.Category.CreatedBy)
-                .Include(post => post.Comments)
                 .SingleOrDefault(post => post.Id == id);
             if (post == null)
             {
