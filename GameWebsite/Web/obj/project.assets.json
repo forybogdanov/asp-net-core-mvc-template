@@ -3377,6 +3377,19 @@
         "runtime": {
           "bin/placeholder/GameWebsite.Services.dll": {}
         }
+      },
+      "GameWebSite.Web.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GameWebsite.Service.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GameWebSite.Web.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GameWebSite.Web.Models.dll": {}
+        }
       }
     }
   },
@@ -10275,10 +10288,16 @@
       "type": "project",
       "path": "../Service/GameWebsiteServices/GameWebsite.Services.csproj",
       "msbuildProject": "../Service/GameWebsiteServices/GameWebsite.Services.csproj"
+    },
+    "GameWebSite.Web.Models/1.0.0": {
+      "type": "project",
+      "path": "GameWebSite.Web.Models/GameWebSite.Web.Models.csproj",
+      "msbuildProject": "GameWebSite.Web.Models/GameWebSite.Web.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "GameWebSite.Web.Models >= 1.0.0",
       "GameWebsite.Service.Models >= 1.0.0",
       "GameWebsite.Services >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.3",
@@ -10322,6 +10341,9 @@
             },
             "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServices\\GameWebsite.Services.csproj": {
               "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServices\\GameWebsite.Services.csproj"
+            },
+            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\GameWebSite.Web.Models\\GameWebSite.Web.Models.csproj": {
+              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\GameWebSite.Web.Models\\GameWebSite.Web.Models.csproj"
             }
           }
         }

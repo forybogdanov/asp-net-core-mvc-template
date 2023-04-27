@@ -1,10 +1,7 @@
-﻿using GameWebsite.Data.Models;
-using GameWebsite.Service.Models.Categories;
-using GameWebsite.Service.Models.Comments;
+﻿using GameWebsite.Service.Models.Categories;
 using GameWebsite.Service.Models.Posts;
 using GameWebsite.Service.Models.Users;
 using GameWebsite.Services.Categories;
-using GameWebsite.Services.Comments;
 using GameWebsite.Services.Posts;
 using GameWebSite.Web.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -17,12 +14,10 @@ namespace GameWebsite.Web.Areas.Administration.Controllers
     {
         private readonly IPostService service;
         private readonly ICategoryService categoryService;
-        private readonly ICommentService commentService;
-        public PostAdministrationController(IPostService service, ICategoryService categoryService, ICommentService commentService)
+        public PostAdministrationController(IPostService service, ICategoryService categoryService)
         {
             this.service = service;
             this.categoryService = categoryService;
-            this.commentService = commentService;
         }
         public IActionResult Index(long id)
         {
@@ -43,7 +38,6 @@ namespace GameWebsite.Web.Areas.Administration.Controllers
             {
                 Id = this.User.FindFirst(ClaimTypes.NameIdentifier).Value
             };
-            postDto.Comments = new List<CommentDto>();
             postDto.Category = new CategoryDto
             {
                 Id = categoryId,
@@ -78,8 +72,7 @@ namespace GameWebsite.Web.Areas.Administration.Controllers
         public async Task<IActionResult> Details(long id)
         {
             PostDto postDto = await this.service.GetPostById(id);
-            List<CommentDto> comments = this.commentService.GetAllComments().FindAll(comment => comment.Post.Id == id);
-            PostDetailsViewData postDetailsViewData = new PostDetailsViewData(postDto, comments);
+            PostDetailsViewData postDetailsViewData = new PostDetailsViewData(postDto);
 
             return View(postDetailsViewData);
         }

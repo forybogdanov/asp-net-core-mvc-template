@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "GameWebsite.Web/1.0.0": {
         "dependencies": {
+          "GameWebSite.Web.Models": "1.0.0",
           "GameWebsite.Service.Models": "1.0.0",
           "GameWebsite.Services": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.3",
@@ -2438,6 +2439,14 @@
         "runtime": {
           "GameWebsite.Services.dll": {}
         }
+      },
+      "GameWebSite.Web.Models/1.0.0": {
+        "dependencies": {
+          "GameWebsite.Service.Models": "1.0.0"
+        },
+        "runtime": {
+          "GameWebSite.Web.Models.dll": {}
+        }
       }
     }
   },
@@ -3777,6 +3786,11 @@
       "sha512": ""
     },
     "GameWebsite.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameWebSite.Web.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
