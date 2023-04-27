@@ -744,9 +744,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\GameWebsite.Data.Models.csproj",
-      "projectName": "GameWebsite.Data.Models",
-      "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\GameWebsite.Data.Models.csproj",
+      "projectUniqueName": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj",
+      "projectName": "ExamApplication.Data.Models",
+      "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj",
       "packagesPath": "C:\\Users\\nolimit-2\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\obj\\",
       "projectStyle": "PackageReference",

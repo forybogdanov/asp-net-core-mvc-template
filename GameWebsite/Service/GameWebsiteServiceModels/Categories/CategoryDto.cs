@@ -1,6 +1,6 @@
-﻿using GameWebsite.Service.Models.Posts;
+﻿using ExamApplication.Service.Models.Posts;
 
-namespace GameWebsite.Service.Models.Categories
+namespace ExamApplication.Service.Models.Categories
 {
     public class CategoryDto : BaseDto
     {

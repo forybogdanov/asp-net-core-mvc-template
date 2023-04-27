@@ -1,27 +1,28 @@
-﻿using GameWebsite.Data.Models;
-using GameWebsite.Service.Models.Users;
+﻿
+using ExamApplication.Data.Models;
+using ExamApplication.Service.Models.Users;
 
-namespace GameWebsite.Service.Mapping.Users
+namespace ExamApplication.Service.Mapping.Users
 {
     public static class UserMappgins
     {
-        public static GameWebsiteUser ToEntity(this GameWebsiteUserDto gameWebsiteUserDto)
+        public static ExamApplicationUser ToEntity(this ExamApplicationUserDto ExamApplicationUserDto)
         {
-            return new GameWebsiteUser
+            return new ExamApplicationUser
             {
-                Id = gameWebsiteUserDto.Id,
-                UserName = gameWebsiteUserDto.UserName,
-                Email = gameWebsiteUserDto.Email,
+                Id = ExamApplicationUserDto.Id,
+                UserName = ExamApplicationUserDto.UserName,
+                Email = ExamApplicationUserDto.Email,
             };
         }
 
-        public static GameWebsiteUserDto ToDto(this GameWebsiteUser gameWebsiteUser)
+        public static ExamApplicationUserDto ToDto(this ExamApplicationUser ExamApplicationUser)
         {
-            return new GameWebsiteUserDto
+            return new ExamApplicationUserDto
             {
-                Id = gameWebsiteUser.Id,
-                UserName = gameWebsiteUser.UserName,
-                Email = gameWebsiteUser.Email,
+                Id = ExamApplicationUser.Id,
+                UserName = ExamApplicationUser.UserName,
+                Email = ExamApplicationUser.Email,
             };
         }
     }

@@ -10,7 +10,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
-using GameWebsite.Data.Models;
+using ExamApplication.Data.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -20,21 +20,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
-namespace GameWebsite.App.Areas.Identity.Pages.Account
+namespace ExamApplication.Web.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<GameWebsiteUser> _signInManager;
-        private readonly UserManager<GameWebsiteUser> _userManager;
-        private readonly IUserStore<GameWebsiteUser> _userStore;
-        private readonly IUserEmailStore<GameWebsiteUser> _emailStore;
+        private readonly SignInManager<ExamApplicationUser> _signInManager;
+        private readonly UserManager<ExamApplicationUser> _userManager;
+        private readonly IUserStore<ExamApplicationUser> _userStore;
+        private readonly IUserEmailStore<ExamApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<GameWebsiteUser> userManager,
-            IUserStore<GameWebsiteUser> userStore,
-            SignInManager<GameWebsiteUser> signInManager,
+            UserManager<ExamApplicationUser> userManager,
+            IUserStore<ExamApplicationUser> userStore,
+            SignInManager<ExamApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -129,7 +129,7 @@ namespace GameWebsite.App.Areas.Identity.Pages.Account
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                        values: new { area = "Identity", userId, code, returnUrl },
                         protocol: Request.Scheme);
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
@@ -139,7 +139,7 @@ namespace GameWebsite.App.Areas.Identity.Pages.Account
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl });
                     }
                     else
                     {
@@ -157,27 +157,27 @@ namespace GameWebsite.App.Areas.Identity.Pages.Account
             return Page();
         }
 
-        private GameWebsiteUser CreateUser()
+        private ExamApplicationUser CreateUser()
         {
             try
             {
-                return Activator.CreateInstance<GameWebsiteUser>();
+                return Activator.CreateInstance<ExamApplicationUser>();
             }
             catch
             {
-                throw new InvalidOperationException($"Can't create an instance of '{nameof(GameWebsiteUser)}'. " +
-                    $"Ensure that '{nameof(GameWebsiteUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+                throw new InvalidOperationException($"Can't create an instance of '{nameof(ExamApplicationUser)}'. " +
+                    $"Ensure that '{nameof(ExamApplicationUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
 
-        private IUserEmailStore<GameWebsiteUser> GetEmailStore()
+        private IUserEmailStore<ExamApplicationUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
             {
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
-            return (IUserEmailStore<GameWebsiteUser>)_userStore;
+            return (IUserEmailStore<ExamApplicationUser>)_userStore;
         }
     }
 }

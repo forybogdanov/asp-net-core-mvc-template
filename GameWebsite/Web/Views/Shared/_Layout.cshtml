@@ -1,9 +1,9 @@
-﻿@using GameWebsite.Data.Models
-@inject UserManager<GameWebsiteUser> UserManager
-@inject SignInManager<GameWebsiteUser> SignInManager
+﻿@using ExamApplication.Data.Models
+@inject UserManager<ExamApplicationUser> UserManager
+@inject SignInManager<ExamApplicationUser> SignInManager
 @{
     List<string> roles = new List<string>();
-    GameWebsiteUser user = new GameWebsiteUser();
+    ExamApplicationUser user = new ExamApplicationUser();
     if (SignInManager.IsSignedIn(User))
     {
         user = await UserManager.GetUserAsync(User);
@@ -18,7 +18,7 @@
     <title>@ViewData["Title"] - ChessForum</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GameWebsite.App.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ExamApplication.App.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>

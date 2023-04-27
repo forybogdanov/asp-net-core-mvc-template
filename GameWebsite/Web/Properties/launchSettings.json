@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "GameWebsite.App": {
+    "ExamApplication.App": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

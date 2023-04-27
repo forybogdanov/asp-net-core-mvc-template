@@ -1,13 +1,13 @@
-﻿using GameWebsite.Service.Models.Categories;
-using GameWebsite.Service.Models.Posts;
-using GameWebsite.Service.Models.Users;
-using GameWebsite.Services.Posts;
-using GameWebSite.Web.Models;
+﻿using ExamApplication.Service.Models.Categories;
+using ExamApplication.Service.Models.Posts;
+using ExamApplication.Service.Models.Users;
+using ExamApplication.Services.Posts;
+using ExamApplication.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace GameWebsite.Web.Controllers
+namespace ExamApplication.Web.Controllers
 {
     public class PostController : Controller
     {
@@ -38,14 +38,14 @@ namespace GameWebsite.Web.Controllers
         [HttpPost("Post/Create/{categoryId}")]
         public async Task<IActionResult> Create(long categoryId, PostDto postDto)
         {
-            postDto.CreatedBy = new GameWebsiteUserDto
+            postDto.CreatedBy = new ExamApplicationUserDto
             {
                 Id = this.User.FindFirst(ClaimTypes.NameIdentifier).Value
             };
             postDto.Category = new CategoryDto
             {
                 Id = categoryId,
-                CreatedBy = new GameWebsiteUserDto { }
+                CreatedBy = new ExamApplicationUserDto { }
             };
             await this.service.CreatePost(postDto);
             return Redirect("/Home");

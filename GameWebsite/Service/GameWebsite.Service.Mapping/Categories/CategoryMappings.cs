@@ -1,9 +1,9 @@
-﻿using GameWebsite.Data.Models;
-using GameWebsite.Service.Mapping.Posts;
-using GameWebsite.Service.Mapping.Users;
-using GameWebsite.Service.Models.Categories;
+﻿using ExamApplication.Data.Models;
+using ExamApplication.Service.Mapping.Posts;
+using ExamApplication.Service.Mapping.Users;
+using ExamApplication.Service.Models.Categories;
 
-namespace GameWebsite.Service.Mapping.Categories
+namespace ExamApplication.Service.Mapping.Categories
 {
     public static class CategoryMappings
     {

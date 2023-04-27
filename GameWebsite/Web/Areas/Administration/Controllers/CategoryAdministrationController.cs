@@ -1,10 +1,10 @@
-﻿using GameWebsite.Service.Models.Categories;
-using GameWebsite.Service.Models.Users;
-using GameWebsite.Services.Categories;
+﻿using ExamApplication.Service.Models.Categories;
+using ExamApplication.Service.Models.Users;
+using ExamApplication.Services.Categories;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace GameWebsite.Web.Areas.Administration.Controllers
+namespace ExamApplication.Web.Areas.Administration.Controllers
 {
     [Route("Administration/Categories")]
     public class CategoryAdministrationController : BaseAdministrationController
@@ -28,7 +28,7 @@ namespace GameWebsite.Web.Areas.Administration.Controllers
         [HttpPost("/Create")]
         public async Task<IActionResult> Create(CategoryDto categoryDto)
         {
-            categoryDto.CreatedBy = new GameWebsiteUserDto
+            categoryDto.CreatedBy = new ExamApplicationUserDto
             {
                 Id = this.User.FindFirst(ClaimTypes.NameIdentifier).Value
             };

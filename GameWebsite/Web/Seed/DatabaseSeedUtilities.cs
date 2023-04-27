@@ -1,8 +1,8 @@
-﻿using GameWebsite.Data;
+﻿using ExamApplication.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace GameWebsite.Web.Seed
+namespace ExamApplication.Web.Seed
 {
     public static class DatabaseSeedUtilities
     {
@@ -10,11 +10,11 @@ namespace GameWebsite.Web.Seed
         {
             using (var serviceScope = app.Services.CreateScope())
             {
-                using (var GameWebsiteDbContext = serviceScope.ServiceProvider.GetRequiredService<GameWebsiteDbContext>())
+                using (var ExamApplicationDbContext = serviceScope.ServiceProvider.GetRequiredService<ExamApplicationDbContext>())
                 {
-                    GameWebsiteDbContext.Database.Migrate();
+                    ExamApplicationDbContext.Database.Migrate();
 
-                    if (GameWebsiteDbContext.Roles.ToList().Count == 0)
+                    if (ExamApplicationDbContext.Roles.ToList().Count == 0)
                     {
                         IdentityRole adminRole = new IdentityRole();
                         adminRole.Name = "Admin";
@@ -24,10 +24,10 @@ namespace GameWebsite.Web.Seed
                         userRole.Name = "User";
                         userRole.NormalizedName = userRole.Name.ToUpper();
 
-                        GameWebsiteDbContext.Add(adminRole);
-                        GameWebsiteDbContext.Add(userRole);
+                        ExamApplicationDbContext.Add(adminRole);
+                        ExamApplicationDbContext.Add(userRole);
 
-                        GameWebsiteDbContext.SaveChanges();
+                        ExamApplicationDbContext.SaveChanges();
                     }
                 }
             }

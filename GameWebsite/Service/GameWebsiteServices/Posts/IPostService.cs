@@ -1,6 +1,6 @@
-﻿using GameWebsite.Service.Models.Posts;
+﻿using ExamApplication.Service.Models.Posts;
 
-namespace GameWebsite.Services.Posts
+namespace ExamApplication.Services.Posts
 {
     public interface IPostService
     {

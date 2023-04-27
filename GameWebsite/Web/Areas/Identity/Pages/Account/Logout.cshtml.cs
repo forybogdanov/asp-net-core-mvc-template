@@ -4,21 +4,21 @@
 
 using System;
 using System.Threading.Tasks;
-using GameWebsite.Data.Models;
+using ExamApplication.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace GameWebsite.App.Areas.Identity.Pages.Account
+namespace ExamApplication.Web.Areas.Identity.Pages.Account
 {
     public class LogoutModel : PageModel
     {
-        private readonly SignInManager<GameWebsiteUser> _signInManager;
+        private readonly SignInManager<ExamApplicationUser> _signInManager;
         private readonly ILogger<LogoutModel> _logger;
 
-        public LogoutModel(SignInManager<GameWebsiteUser> signInManager, ILogger<LogoutModel> logger)
+        public LogoutModel(SignInManager<ExamApplicationUser> signInManager, ILogger<LogoutModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;

@@ -1,6 +1,6 @@
-﻿namespace GameWebsite.Service.Models.Users
+﻿namespace ExamApplication.Service.Models.Users
 {
-    public class GameWebsiteUserDto
+    public class ExamApplicationUserDto
     {
         public string Id { get; set; }
         public string UserName { get; set; }

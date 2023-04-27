@@ -1,12 +1,12 @@
-﻿@using GameWebSite.Web.Models
-@using GameWebsite.Data.Models
-@using GameWebsite.Service.Models.Posts
+﻿@using ExamApplication.Web.Models
+@using ExamApplication.Data.Models
+@using ExamApplication.Service.Models.Posts
 @{
     Layout = "_Layout";
 }
 @model PostViewData
-@inject UserManager<GameWebsiteUser> UserManager
-@inject SignInManager<GameWebsiteUser> SignInManager
+@inject UserManager<ExamApplicationUser> UserManager
+@inject SignInManager<ExamApplicationUser> SignInManager
 @{
     List<string> roles = new List<string>();
     if (SignInManager.IsSignedIn(User))

@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\GameWebsite.Service.Models.csproj",
-      "projectName": "GameWebsite.Service.Models",
-      "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\GameWebsite.Service.Models.csproj",
+      "projectUniqueName": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj",
+      "projectName": "ExamApplication.Service.Models",
+      "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj",
       "packagesPath": "C:\\Users\\nolimit-2\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\obj\\",
       "projectStyle": "PackageReference",

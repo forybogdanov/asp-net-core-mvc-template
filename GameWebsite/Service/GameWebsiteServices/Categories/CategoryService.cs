@@ -1,34 +1,34 @@
-﻿using GameWebsite.Data;
-using GameWebsite.Data.Models;
-using GameWebsite.Service.Mapping.Categories;
-using GameWebsite.Service.Models.Categories;
+﻿using ExamApplication.Data;
+using ExamApplication.Data.Models;
+using ExamApplication.Service.Mapping.Categories;
+using ExamApplication.Service.Models.Categories;
 using Microsoft.EntityFrameworkCore;
 
-namespace GameWebsite.Services.Categories
+namespace ExamApplication.Services.Categories
 {
     public class CategoryService : ICategoryService
     {
-        private readonly GameWebsiteDbContext gameWebsiteDbContext;
+        private readonly ExamApplicationDbContext ExamApplicationDbContext;
 
-        public CategoryService(GameWebsiteDbContext gameWebsiteDbContext)
+        public CategoryService(ExamApplicationDbContext ExamApplicationDbContext)
         {
-            this.gameWebsiteDbContext = gameWebsiteDbContext;
+            this.ExamApplicationDbContext = ExamApplicationDbContext;
         }
 
         public async Task<CategoryDto> CreateCategory(CategoryDto categoryDto)
         {
             Category category = categoryDto.ToEntity();
-            category.CreatedBy = await this.gameWebsiteDbContext.Users.SingleOrDefaultAsync(user => user.Id == categoryDto.CreatedBy.Id);
+            category.CreatedBy = await this.ExamApplicationDbContext.Users.SingleOrDefaultAsync(user => user.Id == categoryDto.CreatedBy.Id);
             category.CreatedAt = DateTime.Now;
-            await this.gameWebsiteDbContext.AddAsync(category);
-            await this.gameWebsiteDbContext.SaveChangesAsync();
+            await this.ExamApplicationDbContext.AddAsync(category);
+            await this.ExamApplicationDbContext.SaveChangesAsync();
             // TODO: set posts
             return category.ToDto();
         }
 
         public async Task<CategoryDto> DeleteCategory(long id)
         {
-            Category category = this.gameWebsiteDbContext.Categories.SingleOrDefault(category => category.Id == id);
+            Category category = this.ExamApplicationDbContext.Categories.SingleOrDefault(category => category.Id == id);
             if (category == null)
             {
                 // TODO: throw exception
@@ -36,21 +36,21 @@ namespace GameWebsite.Services.Categories
             }
 
             CategoryDto categoryDto = category.ToDto();
-            this.gameWebsiteDbContext.Remove(category);
-            await this.gameWebsiteDbContext.SaveChangesAsync();
+            this.ExamApplicationDbContext.Remove(category);
+            await this.ExamApplicationDbContext.SaveChangesAsync();
             return categoryDto;
         }
 
         public IQueryable<CategoryDto> GetAllCategories()
         {
-            return this.gameWebsiteDbContext.Categories
+            return this.ExamApplicationDbContext.Categories
                 .Include(category => category.CreatedBy)
                 .Select(category => category.ToDto());
         }
 
         public async Task<CategoryDto> GetCategoryById(long id)
         {
-            Category category = this.gameWebsiteDbContext.Categories
+            Category category = this.ExamApplicationDbContext.Categories
                 .Include(category => category.CreatedBy)
                 .SingleOrDefault(category => category.Id == id);
             if (category == null)
@@ -63,7 +63,7 @@ namespace GameWebsite.Services.Categories
 
         public async Task<CategoryDto> UpdateCategory(long id, CategoryDto categoryDto)
         {
-            Category category = this.gameWebsiteDbContext.Categories.SingleOrDefault(category => category.Id == id);
+            Category category = this.ExamApplicationDbContext.Categories.SingleOrDefault(category => category.Id == id);
             if (category == null)
             {
                 // TODO: throw exception
@@ -71,8 +71,8 @@ namespace GameWebsite.Services.Categories
             }
             category.Name = categoryDto.Name;
             category.Description = categoryDto.Description;
-            this.gameWebsiteDbContext.Update(category);
-            await this.gameWebsiteDbContext.SaveChangesAsync();
+            this.ExamApplicationDbContext.Update(category);
+            await this.ExamApplicationDbContext.SaveChangesAsync();
             // TODO: set posts
             return category.ToDto();    
         }

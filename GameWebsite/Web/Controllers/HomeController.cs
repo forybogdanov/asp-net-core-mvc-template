@@ -1,8 +1,8 @@
-﻿using GameWebsite.Services.Categories;
-using GameWebsite.Services.Posts;
+﻿using ExamApplication.Services.Categories;
+using ExamApplication.Services.Posts;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GameWebsite.Web.Controllers
+namespace ExamApplication.Web.Controllers
 {
     public class HomeController : Controller
     {

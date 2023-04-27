@@ -1,6 +1,6 @@
-﻿using GameWebsite.Service.Models.Categories;
+﻿using ExamApplication.Service.Models.Categories;
 
-namespace GameWebsite.Services.Categories
+namespace ExamApplication.Services.Categories
 {
 
     public interface ICategoryService

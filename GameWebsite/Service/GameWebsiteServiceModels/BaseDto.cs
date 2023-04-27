@@ -1,11 +1,11 @@
-﻿using GameWebsite.Service.Models.Users;
+﻿using ExamApplication.Service.Models.Users;
 
-namespace GameWebsite.Service.Models
+namespace ExamApplication.Service.Models
 {
     public class BaseDto
     {
         public long Id { get; set; }
-        public GameWebsiteUserDto CreatedBy { get; set; }
+        public ExamApplicationUserDto CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

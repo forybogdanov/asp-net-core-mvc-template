@@ -697,17 +697,17 @@
           }
         }
       },
-      "GameWebsite.Data.Models/1.0.0": {
+      "ExamApplication.Data.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.13"
         },
         "compile": {
-          "bin/placeholder/GameWebsite.Data.Models.dll": {}
+          "bin/placeholder/ExamApplication.Data.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/GameWebsite.Data.Models.dll": {}
+          "bin/placeholder/ExamApplication.Data.Models.dll": {}
         }
       }
     }
@@ -2022,15 +2022,16 @@
         "version.txt"
       ]
     },
-    "GameWebsite.Data.Models/1.0.0": {
+    "ExamApplication.Data.Models/1.0.0": {
       "type": "project",
-      "path": "../GameWebsite.Data.Models/GameWebsite.Data.Models.csproj",
-      "msbuildProject": "../GameWebsite.Data.Models/GameWebsite.Data.Models.csproj"
+      "path": "../GameWebsite.Data.Models/ExamApplication.Data.Models.csproj",
+      "msbuildProject": "../GameWebsite.Data.Models/ExamApplication.Data.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "GameWebsite.Data.Models >= 1.0.0",
+      "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj",
+      "ExamApplication.Data.Models >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.13",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.13",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.13",
@@ -2043,9 +2044,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data\\GameWebsite.Data.csproj",
-      "projectName": "GameWebsite.Data",
-      "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data\\GameWebsite.Data.csproj",
+      "projectUniqueName": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data\\ExamApplication.Data.csproj",
+      "projectName": "ExamApplication.Data",
+      "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data\\ExamApplication.Data.csproj",
       "packagesPath": "C:\\Users\\nolimit-2\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data\\obj\\",
       "projectStyle": "PackageReference",
@@ -2064,8 +2065,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\GameWebsite.Data.Models.csproj": {
-              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\GameWebsite.Data.Models.csproj"
+            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj"
+            },
+            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj"
             }
           }
         }
@@ -2119,5 +2123,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

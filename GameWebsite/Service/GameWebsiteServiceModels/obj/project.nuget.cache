@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VXgzKsMp6SQmRFSBjGk5XSB+di6wq2Th3gylg8FRVprXDsp2IXtos+K3imt7P9ydm5y4BVewdXgfAKk+R72E8A==",
+  "dgSpecHash": "jOWSgxe51yT3+engOWbvRhS3ZP4NvSm/qRnuVHQSWbB1DZRWTlFseWfmrzVHG7lT667M1Hri2WDfXjpAW7Ljdw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\GameWebsite.Service.Models.csproj",
+  "projectFilePath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

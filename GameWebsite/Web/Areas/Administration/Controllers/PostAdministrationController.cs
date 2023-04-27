@@ -1,13 +1,13 @@
-﻿using GameWebsite.Service.Models.Categories;
-using GameWebsite.Service.Models.Posts;
-using GameWebsite.Service.Models.Users;
-using GameWebsite.Services.Categories;
-using GameWebsite.Services.Posts;
-using GameWebSite.Web.Models;
+﻿using ExamApplication.Service.Models.Categories;
+using ExamApplication.Service.Models.Posts;
+using ExamApplication.Service.Models.Users;
+using ExamApplication.Services.Categories;
+using ExamApplication.Services.Posts;
+using ExamApplication.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace GameWebsite.Web.Areas.Administration.Controllers
+namespace ExamApplication.Web.Areas.Administration.Controllers
 {
     [Route("Administration/Posts")]
     public class PostAdministrationController : BaseAdministrationController
@@ -34,14 +34,14 @@ namespace GameWebsite.Web.Areas.Administration.Controllers
         [HttpPost("Posts/Create/{categoryId}")]
         public async Task<IActionResult> Create(long categoryId, PostDto postDto)
         {
-            postDto.CreatedBy = new GameWebsiteUserDto
+            postDto.CreatedBy = new ExamApplicationUserDto
             {
                 Id = this.User.FindFirst(ClaimTypes.NameIdentifier).Value
             };
             postDto.Category = new CategoryDto
             {
                 Id = categoryId,
-                CreatedBy = new GameWebsiteUserDto{ }
+                CreatedBy = new ExamApplicationUserDto{ }
             };
             await this.service.CreatePost(postDto);
             return Redirect("/Administration/Categories");

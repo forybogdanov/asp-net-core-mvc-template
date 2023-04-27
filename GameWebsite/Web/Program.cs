@@ -1,16 +1,16 @@
-using GameWebsite.Web.Seed;
-using GameWebsite.Data;
-using GameWebsite.Data.Models;
+using ExamApplication.Web.Seed;
+using ExamApplication.Data;
+using ExamApplication.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using GameWebsite.Services.Categories;
-using GameWebsite.Services.Posts;
+using ExamApplication.Services.Categories;
+using ExamApplication.Services.Posts;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<GameWebsiteDbContext>(options =>
+builder.Services.AddDbContext<ExamApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddTransient<ICategoryService, CategoryService>();
@@ -18,7 +18,7 @@ builder.Services.AddTransient<IPostService, PostService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<GameWebsiteUser>(options => {
+builder.Services.AddDefaultIdentity<ExamApplicationUser>(options => {
     options.SignIn.RequireConfirmedAccount = false;
     options.Password.RequireDigit = false;
     options.Password.RequireNonAlphanumeric = false;
@@ -28,7 +28,7 @@ builder.Services.AddDefaultIdentity<GameWebsiteUser>(options => {
     options.Password.RequiredLength = 3;
 
 }).AddRoles<IdentityRole>()  
-    .AddEntityFrameworkStores<GameWebsiteDbContext>();
+    .AddEntityFrameworkStores<ExamApplicationDbContext>();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();

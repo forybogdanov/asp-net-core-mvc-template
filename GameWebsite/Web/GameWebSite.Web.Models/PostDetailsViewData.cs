@@ -1,6 +1,6 @@
-﻿using GameWebsite.Service.Models.Posts;
+﻿using ExamApplication.Service.Models.Posts;
 
-namespace GameWebSite.Web.Models
+namespace ExamApplication.Web.Models
 {
     public class PostDetailsViewData
     {

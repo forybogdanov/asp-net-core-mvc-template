@@ -1,37 +1,37 @@
-﻿using GameWebsite.Data;
-using GameWebsite.Data.Models;
-using GameWebsite.Service.Mapping.Categories;
-using GameWebsite.Service.Mapping.Posts;
-using GameWebsite.Service.Mapping.Users;
-using GameWebsite.Service.Models.Posts;
+﻿using ExamApplication.Data;
+using ExamApplication.Data.Models;
+using ExamApplication.Service.Mapping.Categories;
+using ExamApplication.Service.Mapping.Posts;
+using ExamApplication.Service.Mapping.Users;
+using ExamApplication.Service.Models.Posts;
 using Microsoft.EntityFrameworkCore;
 
-namespace GameWebsite.Services.Posts
+namespace ExamApplication.Services.Posts
 {
     public class PostService : IPostService
     {
-        private readonly GameWebsiteDbContext gameWebsiteDbContext;
+        private readonly ExamApplicationDbContext ExamApplicationDbContext;
 
-        public PostService(GameWebsiteDbContext gameWebsiteDbContext)
+        public PostService(ExamApplicationDbContext ExamApplicationDbContext)
         {
-            this.gameWebsiteDbContext = gameWebsiteDbContext;
+            this.ExamApplicationDbContext = ExamApplicationDbContext;
         }
         public async Task<PostDto> CreatePost(PostDto postDto)
         {
             Post post = postDto.ToEntity();
-            post.CreatedBy = await this.gameWebsiteDbContext.Users.SingleOrDefaultAsync(user => user.Id == postDto.CreatedBy.Id);
-            post.Category = await this.gameWebsiteDbContext.Categories
+            post.CreatedBy = await this.ExamApplicationDbContext.Users.SingleOrDefaultAsync(user => user.Id == postDto.CreatedBy.Id);
+            post.Category = await this.ExamApplicationDbContext.Categories
                 .Include(category => category.CreatedBy)
                 .SingleOrDefaultAsync(category => category.Id == postDto.Category.Id);
             post.CreatedAt = DateTime.Now;
-            await this.gameWebsiteDbContext.AddAsync(post);
-            await this.gameWebsiteDbContext.SaveChangesAsync();
+            await this.ExamApplicationDbContext.AddAsync(post);
+            await this.ExamApplicationDbContext.SaveChangesAsync();
             return post.ToDto();
         }
 
         public async Task<PostDto> DeletePost(long id)
         {
-            Post post = this.gameWebsiteDbContext.Posts
+            Post post = this.ExamApplicationDbContext.Posts
                 .Include(post => post.Category)
                 .Include(post => post.Category.CreatedBy)
                 .Include(post => post.CreatedBy)
@@ -43,14 +43,14 @@ namespace GameWebsite.Services.Posts
             }
 
             PostDto postDto = post.ToDto();
-            this.gameWebsiteDbContext.Remove(post);
-            await this.gameWebsiteDbContext.SaveChangesAsync();
+            this.ExamApplicationDbContext.Remove(post);
+            await this.ExamApplicationDbContext.SaveChangesAsync();
             return postDto;
         }
 
         public List<PostDto> GetAllPosts()
         {
-            /*IQueryable<PostDto> posts = this.gameWebsiteDbContext.Posts
+            /*IQueryable<PostDto> posts = this.ExamApplicationDbContext.Posts
                 .Include(post => post.CreatedBy)
                 .Include(post => post.Category)
                 .Select((post) => 
@@ -59,7 +59,7 @@ namespace GameWebsite.Services.Posts
                     return post;
                 })
                 .Select(post => post.toDto());*/
-            List<Post> posts = this.gameWebsiteDbContext.Posts
+            List<Post> posts = this.ExamApplicationDbContext.Posts
                 .Include(post => post.CreatedBy)
                 .Include(post => post.Category).ToList();
 
@@ -72,7 +72,7 @@ namespace GameWebsite.Services.Posts
 
         public async Task<PostDto> GetPostById(long id)
         {
-            Post post = this.gameWebsiteDbContext.Posts
+            Post post = this.ExamApplicationDbContext.Posts
                 .Include(post => post.CreatedBy)
                 .Include(post => post.Category)
                 .Include(post => post.Category.CreatedBy)
@@ -87,7 +87,7 @@ namespace GameWebsite.Services.Posts
 
         public async Task<PostDto> UpdatePost(long id, PostDto postDto)
         {
-            Post post = this.gameWebsiteDbContext.Posts
+            Post post = this.ExamApplicationDbContext.Posts
                 .Include(post => post.Category)
                 .Include(post => post.Category.CreatedBy)
                 .SingleOrDefault(post => post.Id == id);
@@ -98,8 +98,8 @@ namespace GameWebsite.Services.Posts
             }
             post.Name = postDto.Name;
             post.Content = postDto.Content;
-            this.gameWebsiteDbContext.Update(post);
-            await this.gameWebsiteDbContext.SaveChangesAsync();
+            this.ExamApplicationDbContext.Update(post);
+            await this.ExamApplicationDbContext.SaveChangesAsync();
             // TODO: set posts
             return post.ToDto();
         }

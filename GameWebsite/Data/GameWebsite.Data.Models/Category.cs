@@ -1,4 +1,4 @@
-﻿namespace GameWebsite.Data.Models
+﻿namespace ExamApplication.Data.Models
 {
     public class Category : BaseEntity 
     {
