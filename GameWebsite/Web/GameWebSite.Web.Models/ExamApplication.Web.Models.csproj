@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Service\ExamApplicationServiceModels\ExamApplication.Service.Models.csproj" />
     <ProjectReference Include="..\..\Service\GameWebsiteServiceModels\ExamApplication.Service.Models.csproj" />
   </ItemGroup>
 

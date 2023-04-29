@@ -3316,7 +3316,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj": "1.0.0",
           "ExamApplication.Data.Models": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.13"
@@ -3345,8 +3344,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj": "1.0.0",
-          "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj": "1.0.0",
           "ExamApplication.Data.Models": "1.0.0",
           "ExamApplication.Service.Models": "1.0.0"
         },
@@ -3371,10 +3368,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data\\ExamApplication.Data.csproj": "1.0.0",
-          "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplication.Service.Mapping\\ExamApplication.Service.Mapping.csproj": "1.0.0",
           "ExamApplication.Data": "1.0.0",
-          "ExamApplication.Data.Models": "1.0.0",
           "ExamApplication.Service.Mapping": "1.0.0",
           "ExamApplication.Service.Models": "1.0.0"
         },
@@ -3383,6 +3377,19 @@
         },
         "runtime": {
           "bin/placeholder/ExamApplication.Services.dll": {}
+        }
+      },
+      "ExamApplication.Web.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ExamApplication.Service.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ExamApplication.Web.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExamApplication.Web.Models.dll": {}
         }
       }
     }
@@ -10282,16 +10289,21 @@
       "type": "project",
       "path": "../Service/GameWebsiteServices/ExamApplication.Services.csproj",
       "msbuildProject": "../Service/GameWebsiteServices/ExamApplication.Services.csproj"
+    },
+    "ExamApplication.Web.Models/1.0.0": {
+      "type": "project",
+      "path": "GameWebSite.Web.Models/ExamApplication.Web.Models.csproj",
+      "msbuildProject": "GameWebSite.Web.Models/ExamApplication.Web.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj",
-      "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServices\\ExamApplication.Services.csproj",
-      "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\ExamApplication.Web.Models\\ExamApplication.Web.Models.csproj",
       "ExamApplication.Data >= 1.0.0",
+      "ExamApplication.Data.Models >= 1.0.0",
+      "ExamApplication.Service.Mapping >= 1.0.0",
       "ExamApplication.Service.Models >= 1.0.0",
       "ExamApplication.Services >= 1.0.0",
+      "ExamApplication.Web.Models >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.3",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.13",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.13",
@@ -10328,14 +10340,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj"
+            },
             "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data\\ExamApplication.Data.csproj": {
               "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data\\ExamApplication.Data.csproj"
             },
-            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj": {
-              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj"
-            },
-            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServices\\ExamApplication.Services.csproj": {
-              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServices\\ExamApplication.Services.csproj"
+            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsite.Service.Mapping\\ExamApplication.Service.Mapping.csproj": {
+              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsite.Service.Mapping\\ExamApplication.Service.Mapping.csproj"
             },
             "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj": {
               "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj"
@@ -10343,8 +10355,8 @@
             "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServices\\ExamApplication.Services.csproj": {
               "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServices\\ExamApplication.Services.csproj"
             },
-            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\ExamApplication.Web.Models\\ExamApplication.Web.Models.csproj": {
-              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\ExamApplication.Web.Models\\ExamApplication.Web.Models.csproj"
+            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\GameWebSite.Web.Models\\ExamApplication.Web.Models.csproj": {
+              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\GameWebSite.Web.Models\\ExamApplication.Web.Models.csproj"
             }
           }
         }
@@ -10411,61 +10423,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\ExamApplication.Web.Models\\ExamApplication.Web.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\ExamApplication.Web.Models\\ExamApplication.Web.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServices\\ExamApplication.Services.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServices\\ExamApplication.Services.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplication.Service.Mapping\\ExamApplication.Service.Mapping.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplication.Service.Mapping\\ExamApplication.Service.Mapping.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data\\ExamApplication.Data.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data\\ExamApplication.Data.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

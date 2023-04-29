@@ -768,8 +768,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj",
-      "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj",
       "ExamApplication.Data.Models >= 1.0.0",
       "ExamApplication.Service.Models >= 1.0.0"
     ]
@@ -801,14 +799,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj": {
-              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj"
-            },
             "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj": {
               "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj"
-            },
-            "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj": {
-              "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj"
             },
             "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj": {
               "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj"
@@ -843,25 +835,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

@@ -11,9 +11,13 @@
 
   <ItemGroup>
     <Compile Remove="ExamApplication.Web.Models\**" />
+    <Compile Remove="GameWebSite.Web.Models\**" />
     <Content Remove="ExamApplication.Web.Models\**" />
+    <Content Remove="GameWebSite.Web.Models\**" />
     <EmbeddedResource Remove="ExamApplication.Web.Models\**" />
+    <EmbeddedResource Remove="GameWebSite.Web.Models\**" />
     <None Remove="ExamApplication.Web.Models\**" />
+    <None Remove="GameWebSite.Web.Models\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,12 +34,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Data\GameWebsite.Data.Models\ExamApplication.Data.Models.csproj" />
     <ProjectReference Include="..\Data\GameWebsite.Data\ExamApplication.Data.csproj" />
-    <ProjectReference Include="..\Service\ExamApplicationServiceModels\ExamApplication.Service.Models.csproj" />
-    <ProjectReference Include="..\Service\ExamApplicationServices\ExamApplication.Services.csproj" />
+    <ProjectReference Include="..\Service\GameWebsite.Service.Mapping\ExamApplication.Service.Mapping.csproj" />
     <ProjectReference Include="..\Service\GameWebsiteServiceModels\ExamApplication.Service.Models.csproj" />
     <ProjectReference Include="..\Service\GameWebsiteServices\ExamApplication.Services.csproj" />
-    <ProjectReference Include="ExamApplication.Web.Models\ExamApplication.Web.Models.csproj" />
+    <ProjectReference Include="GameWebSite.Web.Models\ExamApplication.Web.Models.csproj" />
   </ItemGroup>
 
 </Project>

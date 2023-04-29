@@ -88,14 +88,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj"
-              },
               "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj": {
                 "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\GameWebsite.Data.Models\\ExamApplication.Data.Models.csproj"
-              },
-              "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj": {
-                "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj"
               },
               "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj": {
                 "projectPath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\GameWebsiteServiceModels\\ExamApplication.Service.Models.csproj"

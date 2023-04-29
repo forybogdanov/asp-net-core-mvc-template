@@ -19,13 +19,12 @@
     </PackageReference>
     </ItemGroup>
 
-    <ItemGroup>
-    <Folder Include="Migrations\" />
-    </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Migrations\" />
+	</ItemGroup>
 
-    <ItemGroup>
-    <ProjectReference Include="..\ExamApplication.Data.Models\ExamApplication.Data.Models.csproj" />
-    <ProjectReference Include="..\GameWebsite.Data.Models\ExamApplication.Data.Models.csproj" />
-    </ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\GameWebsite.Data.Models\ExamApplication.Data.Models.csproj" />
+	</ItemGroup>
 
 </Project>

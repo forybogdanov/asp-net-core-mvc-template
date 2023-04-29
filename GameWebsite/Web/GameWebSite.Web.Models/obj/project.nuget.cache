@@ -1,18 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TZH0qimVI9JUGOgLX2PkhVrlk7pB8jhqxZ+e+nA2mJXeGReuXlxVr7MUDpNF2scw1YM65oiw7PNwfXL1vCGUKg==",
-  "success": false,
+  "dgSpecHash": "aqYNQWSJ14PnBTqBbRDdkjg66PX5Dc8pLC3hYvST8R7xKaBoPr8yktPGA9nsbDc6UxidFFd0JAaXwPsf4i6JEQ==",
+  "success": true,
   "projectFilePath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\GameWebSite.Web.Models\\ExamApplication.Web.Models.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

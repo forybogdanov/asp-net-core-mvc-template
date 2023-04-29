@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "kuFOhk/WgxrKR/WoNOLk5zpXT/kKVUs6o3N9ounbI1yl1rT6IbjSZBhhC5QmU3kcR0/WPWvlHAWzuweuwiU5Xw==",
-  "success": false,
+  "dgSpecHash": "wvSJxT23xR77XAfZrv0ZsjszWWY4mKwf3BcO8i2gJ4H5XerxtBD29wKyXXinORrKXo1fM3OD5Qzq7qU5vENR4A==",
+  "success": true,
   "projectFilePath": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\ExamApplication.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nolimit-2\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -192,60 +192,5 @@
     "C:\\Users\\nolimit-2\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\nolimit-2\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\ExamApplication.Web.Models\\ExamApplication.Web.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Web\\ExamApplication.Web.Models\\ExamApplication.Web.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServices\\ExamApplication.Services.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServices\\ExamApplication.Services.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplicationServiceModels\\ExamApplication.Service.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplication.Service.Mapping\\ExamApplication.Service.Mapping.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Service\\ExamApplication.Service.Mapping\\ExamApplication.Service.Mapping.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data\\ExamApplication.Data.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data\\ExamApplication.Data.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\nolimit-2\\source\\repos\\ExamApplication\\GameWebsite\\Data\\ExamApplication.Data.Models\\ExamApplication.Data.Models.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }
