@@ -1,0 +1,32 @@
+﻿@*@using ExamApplication.Service.Models.Users
+@{
+    Layout = "../Shared/_AdminLayout";
+}
+@model ExamApplicationUserDto
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <h2>Create user</h2>
+    <form asp-area="Administration" asp-controller="PostAdministration" asp-action="Create" method="post">
+      <div class="form-group">
+        <label asp-for="Name" for="name">First Name</label>
+        <input asp-for="Name" type="text" class="form-control mb-3" id="name" placeholder="First Name...">
+      </div>
+      <div class="form-group">
+        <label asp-for="LastName" for="last-name">Last Name</label>
+        <input asp-for="LastName" type="text" class="form-control mb-3" id="last-name" placeholder="Last Name...">
+      </div>
+      <div class="form-group">
+        <label asp-for="Email" for="email">Last Name</label>
+        <input asp-for="Email" type="email" class="form-control mb-3" id="email" placeholder="Email...">
+      </div>
+      <div class="form-group">
+        <label asp-for="Password" for="password">Password</label>
+        <input asp-for="Password" type="password" class="form-control mb-3" id="password" placeholder="Passwor...">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>*@

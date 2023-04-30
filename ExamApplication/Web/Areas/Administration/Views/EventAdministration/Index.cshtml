@@ -1,4 +1,23 @@
-﻿@{
+﻿@using ExamApplication.Service.Models.Events
+@using ExamApplication.Service.Models.Users
+@{
     Layout = "../Shared/_AdminLayout";
 }
-<p>Event Administration</p>
+@model List<EventDto>
+<h1>Events</h1>
+@foreach(EventDto eventDto in Model)
+{
+        <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">@(eventDto.Name)</h5>
+        <p class="card-text">@(eventDto.Description)</p>
+        <p class="card-text">@(eventDto.Date)</p>
+        <a class="btn btn-primary" asp-area="Administration" asp-controller="EventAdministration" asp-action="Edit" asp-route-id="@(eventDto.Id)">Edit</a>
+        <a class="btn btn-primary" asp-area="Administration" asp-controller="EventAdministration" asp-action="Delete" asp-route-id="@(eventDto.Id)">Delete</a>
+        <a href="#" class="btn btn-primary">Get a ticket</a>
+      </div>
+    </div>
+}
+<a class="btn btn-primary" asp-area="Administration" asp-controller="EventAdministration" asp-action="Create">Create Event</a>
+</table>

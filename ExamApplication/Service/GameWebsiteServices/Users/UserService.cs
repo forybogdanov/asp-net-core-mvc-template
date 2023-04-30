@@ -3,6 +3,8 @@ using ExamApplication.Data;
 using ExamApplication.Data.Models;
 using ExamApplication.Service.Mapping.Users;
 using ExamApplication.Service.Models.Users;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace ExamApplication.Services.Users
 {

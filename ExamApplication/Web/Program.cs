@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ExamApplication.Services.Categories;
 using ExamApplication.Services.Posts;
-using Microsoft.Extensions.DependencyInjection;
 using ExamApplication.Services.Users;
+using ExamApplication.Services.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +18,7 @@ builder.Services.AddDbContext<ExamApplicationDbContext>(options =>
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IPostService, PostService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IEventService, EventService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

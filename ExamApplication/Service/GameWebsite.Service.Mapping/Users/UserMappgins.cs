@@ -19,7 +19,7 @@ namespace ExamApplication.Service.Mapping.Users
         }
 
         public static ExamApplicationUserDto ToDto(this ExamApplicationUser ExamApplicationUser)
-        {
+        { 
             return new ExamApplicationUserDto
             {
                 Id = ExamApplicationUser.Id,
