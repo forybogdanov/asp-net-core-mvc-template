@@ -43,7 +43,7 @@
                         @if (roles.Contains("User"))
                          {
                              <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Post" asp-action="MyPosts" asp-route-id="@(user?.Id)">My Posts</a>
+                                <a class="nav-link text-dark" asp-controller="Events" asp-action="MyTickets" asp-route-id="@(user?.Id)">My tickets</a>
                             </li>
                         }
                         <li class="nav-item">

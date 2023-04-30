@@ -34,12 +34,6 @@
                          <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Administration" asp-controller="AdministrationPanel" asp-action="Index">Admin Panel</a>
                         </li>
-                        @if (roles.Contains("User"))
-                         {
-                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Post" asp-action="MyPosts" asp-route-id="@(user?.Id)">My Posts</a>
-                            </li>
-                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
