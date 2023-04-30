@@ -4,6 +4,7 @@ using ExamApplication.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExamApplication.Data.Migrations
 {
     [DbContext(typeof(ExamApplicationDbContext))]
-    partial class ExamApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230430073923_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,45 +23,6 @@ namespace ExamApplication.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("ExamApplication.Data.Models.Attachment", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
-
-                    b.Property<long?>("CommentId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedById")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long?>("PostId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CommentId");
-
-                    b.HasIndex("CreatedById");
-
-                    b.HasIndex("PostId");
-
-                    b.ToTable("Attachments");
-                });
 
             modelBuilder.Entity("ExamApplication.Data.Models.Category", b =>
                 {
@@ -90,7 +53,7 @@ namespace ExamApplication.Data.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("ExamApplication.Data.Models.Comment", b =>
+            modelBuilder.Entity("ExamApplication.Data.Models.Event", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -98,26 +61,28 @@ namespace ExamApplication.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedById")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<long>("PostId")
-                        .HasColumnType("bigint");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedById");
 
-                    b.HasIndex("PostId");
-
-                    b.ToTable("Comments");
+                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("ExamApplication.Data.Models.ExamApplicationUser", b =>
@@ -139,11 +104,19 @@ namespace ExamApplication.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -356,23 +329,6 @@ namespace ExamApplication.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ExamApplication.Data.Models.Attachment", b =>
-                {
-                    b.HasOne("ExamApplication.Data.Models.Comment", null)
-                        .WithMany("Attachments")
-                        .HasForeignKey("CommentId");
-
-                    b.HasOne("ExamApplication.Data.Models.ExamApplicationUser", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById");
-
-                    b.HasOne("ExamApplication.Data.Models.Post", null)
-                        .WithMany("Attachments")
-                        .HasForeignKey("PostId");
-
-                    b.Navigation("CreatedBy");
-                });
-
             modelBuilder.Entity("ExamApplication.Data.Models.Category", b =>
                 {
                     b.HasOne("ExamApplication.Data.Models.ExamApplicationUser", "CreatedBy")
@@ -382,21 +338,13 @@ namespace ExamApplication.Data.Migrations
                     b.Navigation("CreatedBy");
                 });
 
-            modelBuilder.Entity("ExamApplication.Data.Models.Comment", b =>
+            modelBuilder.Entity("ExamApplication.Data.Models.Event", b =>
                 {
                     b.HasOne("ExamApplication.Data.Models.ExamApplicationUser", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById");
 
-                    b.HasOne("ExamApplication.Data.Models.Post", "Post")
-                        .WithMany("Comments")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("CreatedBy");
-
-                    b.Navigation("Post");
                 });
 
             modelBuilder.Entity("ExamApplication.Data.Models.Post", b =>
@@ -470,18 +418,6 @@ namespace ExamApplication.Data.Migrations
             modelBuilder.Entity("ExamApplication.Data.Models.Category", b =>
                 {
                     b.Navigation("Posts");
-                });
-
-            modelBuilder.Entity("ExamApplication.Data.Models.Comment", b =>
-                {
-                    b.Navigation("Attachments");
-                });
-
-            modelBuilder.Entity("ExamApplication.Data.Models.Post", b =>
-                {
-                    b.Navigation("Attachments");
-
-                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

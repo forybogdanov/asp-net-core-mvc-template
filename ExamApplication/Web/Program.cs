@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ExamApplication.Services.Categories;
 using ExamApplication.Services.Posts;
+using Microsoft.Extensions.DependencyInjection;
+using ExamApplication.Services.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,10 +17,11 @@ builder.Services.AddDbContext<ExamApplicationDbContext>(options =>
 
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IPostService, PostService>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<ExamApplicationUser>(options => {
+builder.Services.AddIdentity<ExamApplicationUser, IdentityRole>(options => {
     options.SignIn.RequireConfirmedAccount = false;
     options.Password.RequireDigit = false;
     options.Password.RequireNonAlphanumeric = false;
@@ -45,7 +48,7 @@ else
     app.UseHsts();
 }
 
-/*app.SeedRoles();*/
+app.SeedRoles();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

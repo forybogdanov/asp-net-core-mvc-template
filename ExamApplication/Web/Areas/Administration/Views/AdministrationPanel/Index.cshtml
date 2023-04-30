@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "../Shared/_AdminLayout";
 }
+@model AdministrationPanelViewData
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +11,15 @@
 
 <body>
     <h1>Welcome to admin panel</h1>
+    <h3>User count: @(Model.UsersCount)</h3>
+    <h3>Events count: @(Model.EventsCount)</h3>
+    <h3>Reserved count: @(Model.ReservedCount)</h3>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link" asp-area="Administration" asp-controller="CategoryAdministration" asp-action="Index">Categories</a>
+          <a class="nav-link" asp-area="Administration" asp-controller="EventAdministration" asp-action="Index">Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Users</a>
+          <a class="nav-link" class="nav-link" asp-area="Administration" asp-controller="UserAdministration" asp-action="Index">Users</a>
         </li>
       </ul>
 </body>

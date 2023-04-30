@@ -293,9 +293,6 @@ C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\obj\Debug\ne
 C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\obj\Debug\net6.0\ExamApplication.Web.pdb
 C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\bin\Debug\net6.0\appsettings.json
-C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\bin\Debug\net6.0\ExamApplication.Web.Models\bin\Debug\net6.0\ExamApplication.Web.Models.deps.json
-C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\bin\Debug\net6.0\ExamApplication.Web.Models\obj\ExamApplication.Web.Models.csproj.nuget.dgspec.json
-C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\bin\Debug\net6.0\ExamApplication.Web.Models\obj\project.assets.json
 C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\bin\Debug\net6.0\ExamApplication.Web.staticwebassets.runtime.json
 C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\bin\Debug\net6.0\ExamApplication.Web.exe
 C:\Users\nolimit-2\source\repos\ExamApplication\ExamApplication\Web\bin\Debug\net6.0\ExamApplication.Web.deps.json

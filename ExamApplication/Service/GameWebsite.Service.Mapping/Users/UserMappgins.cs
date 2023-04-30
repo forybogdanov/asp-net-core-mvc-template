@@ -13,6 +13,8 @@ namespace ExamApplication.Service.Mapping.Users
                 Id = ExamApplicationUserDto.Id,
                 UserName = ExamApplicationUserDto.UserName,
                 Email = ExamApplicationUserDto.Email,
+                Name = ExamApplicationUserDto.Name,
+                LastName = ExamApplicationUserDto.LastName,
             };
         }
 
@@ -23,6 +25,8 @@ namespace ExamApplication.Service.Mapping.Users
                 Id = ExamApplicationUser.Id,
                 UserName = ExamApplicationUser.UserName,
                 Email = ExamApplicationUser.Email,
+                Name = ExamApplicationUser.Name,
+                LastName = ExamApplicationUser.LastName,
             };
         }
     }

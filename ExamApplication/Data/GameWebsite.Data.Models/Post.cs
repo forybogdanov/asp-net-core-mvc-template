@@ -1,5 +1,4 @@
-﻿
-namespace ExamApplication.Data.Models
+﻿namespace ExamApplication.Data.Models
 {
     public class Post : BaseEntity
     {
