@@ -1,4 +1,4 @@
-"# asp-net-core-mvc-template" 
+# Designed as a skeleton project to be used for the final exam of the IT Career program from the Ministry of Education
 
 # Add migration to apply changes
 
